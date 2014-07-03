@@ -1,0 +1,14 @@
+chemistry:13
+experiment_name:17
+instrument_name:21
+instrument_type:24
+column_header:29
+results_sheet:Results
+well:Well
+well_position:Well Position
+sample_name:Sample Name
+target_name:Target Name
+efficiency:Efficiency
+Cq:CT
+n_wells:384
+na_values:Undetermined
