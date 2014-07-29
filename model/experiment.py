@@ -116,6 +116,23 @@ class QPCRExperiment(GeneralExperiment):
     def trial(self):
         pass
 
+    def compute_genorm_ranking(self, candidate_targets):
+        """Uses the geNorm algorith to rank the most stably expressed miRNAs
+           from a set of candidate targets in your ex periment.
+           See Vandesompele et al.'s 2002 Genome Biology paper for information about
+           the algorithm: http://dx.doi.org/10.1186/gb-2002-3-7-research0034"""
+        rsuffix = '_r'
+        if CT_MEAN not in self.__data.columns.values:
+            self.compute_cq_mean()
+        candidate_frame = pd.concat([self.__data[self.__data[TARGET_NAME] == candidate]
+                                     for candidate in candidate_targets], ignore_index=True)
+        candidate_frame['Min CT Mean'] = candidate_frame.join(candidate_frame[[TARGET_NAME, CT_MEAN]]
+                                                              .groupby(TARGET_NAME)
+                                                              .min(), on=TARGET_NAME, rsuffix=rsuffix)[CT_MEAN+rsuffix]
+        candidate_frame[RQ] = (2*candidate_frame[EFFICIENCY])**(candidate_frame['Min CT Mean'] - candidate_frame[CT_MEAN])
+        candidate_frame = candidate_frame[[SAMPLE_NAME, TARGET_NAME, RQ]]
+        return candidate_frame
+
     @classmethod
     def from_collection(cls, root_dir, file_format, **kwd):
         data_set = []

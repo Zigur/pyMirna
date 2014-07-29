@@ -21,6 +21,8 @@ CT_STD = 'CT Std'
 DELTA_CT = 'Delta CT'
 EXP_DELTA_CT = 'E^(-Delta CT)'
 
+RQ = 'RQ'
+
 FOLD_CHANGE = 'Fold Change'
 FC_QUALITY = 'FC Quality'
 FOLD_REGULATION = 'Fold Regulation'
