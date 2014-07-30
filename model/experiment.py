@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 from constants import *
 import os
+import pdb
 
 __author__ = 'massi'
 
@@ -116,11 +117,30 @@ class QPCRExperiment(GeneralExperiment):
     def trial(self):
         pass
 
+    def select_candidate_targets(self, n_candidates=10):
+        """Identifies a set of candidate targets to be tested on the geNorm algorithm.
+        The candidates are identifies according to the guidelines exposed by Vandesompele on the
+        qbase+ website, namely that satisfy the following conditions:
+        a) have data for all samples,
+        b) lowest standard deviation,
+        c) do not belong to the same miR family* (use only the best miR per family).
+        We recommend to select at least 3 (5 or more is better)."""
+        exp_data_ind=self.__data.set_index([SAMPLE_NAME, TARGET_NAME])
+        dct_frame = pd.concat([exp_data_ind.ix[sample_name][DELTA_CT] for sample_name in exp_data_ind.index.levels[0].tolist()],
+                        axis=1).dropna()
+        dct_frame['STD'] = dct_frame.std(axis=1)
+        dct_frame['index'] = dct_frame.index    # insert 'index' column to remove possible duplicates
+        dct_frame = dct_frame[['index', 'STD']].drop_duplicates(cols='index').sort(columns='STD')
+        # pdb.set_trace()
+        del dct_frame['index']  # remove 'index' column
+        return dct_frame.head(n=n_candidates).index.values.tolist()
+
     def compute_genorm_ranking(self, candidate_targets):
         """Uses the geNorm algorith to rank the most stably expressed miRNAs
            from a set of candidate targets in your ex periment.
            See Vandesompele et al.'s 2002 Genome Biology paper for information about
            the algorithm: http://dx.doi.org/10.1186/gb-2002-3-7-research0034"""
+        # GOT AN ERROR HERE!!
         rsuffix = '_r'
         if CT_MEAN not in self.__data.columns.values:
             self.compute_cq_mean()
@@ -130,8 +150,23 @@ class QPCRExperiment(GeneralExperiment):
                                                               .groupby(TARGET_NAME)
                                                               .min(), on=TARGET_NAME, rsuffix=rsuffix)[CT_MEAN+rsuffix]
         candidate_frame[RQ] = (2*candidate_frame[EFFICIENCY])**(candidate_frame['Min CT Mean'] - candidate_frame[CT_MEAN])
-        candidate_frame = candidate_frame[[SAMPLE_NAME, TARGET_NAME, RQ]]
-        return candidate_frame
+        # pdb.set_trace()
+        candidate_frame = candidate_frame[[SAMPLE_NAME, TARGET_NAME, RQ]].set_index([SAMPLE_NAME, TARGET_NAME])
+        cols = ['J_Target', 'K_Target'] + candidate_frame.index.levels[0].tolist()
+        m_frame = pd.DataFrame(columns=cols)
+        i = 0
+        for target_j in candidate_frame.index.levels[1]:
+            for target_k in candidate_frame.index.levels[1]:
+                if target_j != target_k:
+                    row = [target_j, target_k]
+                    for sample_name in candidate_frame.index.levels[0]:     # the first level contains the sample names
+                        row.append(np.log2(candidate_frame.ix[sample_name, target_j][RQ]/candidate_frame.ix[sample_name, target_k][RQ]))
+                    m_frame.loc[i] = row
+                    i += 1
+        m_frame['STD'] = m_frame.drop(['J_Target', 'K_Target'], axis=1).std(axis=1)
+        M_values = m_frame[['J_Target', 'K_Target', 'STD']].groupby('J_Target').mean().rename(columns={'STD': M_VALUE})
+        M_values.index.names = [TARGET_NAME]
+        return M_values.sort(M_VALUE)
 
     @classmethod
     def from_collection(cls, root_dir, file_format, **kwd):

@@ -40,3 +40,4 @@ N_DOWN = "Down Count"
 
 TEST_SAMPLE = "Test"
 CONTROL_SAMPLE = "Control"
+M_VALUE = 'M-value'
