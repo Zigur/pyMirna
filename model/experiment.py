@@ -151,7 +151,8 @@ class QPCRExperiment(GeneralExperiment):
                                                               .min(), on=TARGET_NAME, rsuffix=rsuffix)[CT_MEAN+rsuffix]
         candidate_frame[RQ] = (2*candidate_frame[EFFICIENCY])**(candidate_frame['Min CT Mean'] - candidate_frame[CT_MEAN])
         # pdb.set_trace()
-        candidate_frame = candidate_frame[[SAMPLE_NAME, TARGET_NAME, RQ]].set_index([SAMPLE_NAME, TARGET_NAME])
+        candidate_frame = candidate_frame[[SAMPLE_NAME, TARGET_NAME, RQ]].drop_duplicates(cols=[SAMPLE_NAME, TARGET_NAME])\
+                                                                         .set_index([SAMPLE_NAME, TARGET_NAME])
         cols = ['J_Target', 'K_Target'] + candidate_frame.index.levels[0].tolist()
         m_frame = pd.DataFrame(columns=cols)
         i = 0

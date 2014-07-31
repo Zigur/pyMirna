@@ -35,7 +35,18 @@
       <file leaf-file-name="experiment.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/model/experiment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="142" column="29" selection-start="5540" selection-end="5540" vertical-scroll-proportion="0.59907836" vertical-offset="1740" max-vertical-offset="4350">
+            <state line="151" column="122" selection-start="6262" selection-end="6262" vertical-scroll-proportion="-2.2258065" vertical-offset="3714" max-vertical-offset="4365">
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="normalizer.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/normalizer.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="38" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -46,7 +57,7 @@
       <file leaf-file-name="constants.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/constants.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="18" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="720">
+            <state line="21" column="30" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="720">
               <folding />
             </state>
           </provider>
@@ -82,7 +93,7 @@
       <file leaf-file-name="ranking.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/model/ranking.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="19" selection-start="86" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="210">
+            <state line="6" column="19" selection-start="86" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="210">
               <folding />
             </state>
           </provider>
@@ -107,19 +118,19 @@
         <option value="$PROJECT_DIR$/model/plate.py" />
         <option value="$PROJECT_DIR$/filters/preprocessing.py" />
         <option value="$PROJECT_DIR$/postprocessing/fc.py" />
-        <option value="$PROJECT_DIR$/model/normalizer.py" />
         <option value="$PROJECT_DIR$/postprocessing/utils.py" />
         <option value="$PROJECT_DIR$/main_test.py" />
         <option value="$PROJECT_DIR$/postprocessing/learning.py" />
         <option value="$PROJECT_DIR$/model/ranking.py" />
         <option value="$PROJECT_DIR$/model/constants.py" />
+        <option value="$PROJECT_DIR$/model/normalizer.py" />
         <option value="$PROJECT_DIR$/model/experiment.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="width" value="1266" />
+    <option name="x" value="1044" />
+    <option name="width" value="1260" />
     <option name="height" value="773" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -329,8 +340,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="0" width="1266" height="773" extended-state="4" />
-    <editor active="true" />
+    <frame x="1044" y="0" width="1260" height="773" extended-state="4" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -346,15 +357,15 @@
     </layout>
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32554746" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16640624" sideWeight="0.49927008" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3259587" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16640624" sideWeight="0.5007299" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3459854" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16640624" sideWeight="0.5007299" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
@@ -388,8 +399,12 @@
           <line>45</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/model/normalizer.py</url>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -682,11 +697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/normalizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="10" selection-start="625" selection-end="625" vertical-scroll-proportion="0.34562212" vertical-offset="0" max-vertical-offset="651" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/postprocessing/fc.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="70" selection-start="1214" selection-end="1214" vertical-scroll-proportion="0.0" vertical-offset="330" max-vertical-offset="1605">
@@ -701,13 +711,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/constants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="18" selection-start="864" selection-end="864" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="720">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/ranking.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="6" column="19" selection-start="86" selection-end="362" vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="210">
@@ -715,9 +718,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/model/constants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="30" selection-start="501" selection-end="501" vertical-scroll-proportion="0.0" vertical-offset="69" max-vertical-offset="720">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/normalizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="38" selection-start="1025" selection-end="1025" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/model/experiment.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="142" column="29" selection-start="5540" selection-end="5540" vertical-scroll-proportion="0.59907836" vertical-offset="1740" max-vertical-offset="4350">
+        <state line="151" column="122" selection-start="6262" selection-end="6262" vertical-scroll-proportion="-2.2258065" vertical-offset="3714" max-vertical-offset="4365">
           <folding>
             <element signature="e#0#31#0" expanded="true" />
           </folding>
